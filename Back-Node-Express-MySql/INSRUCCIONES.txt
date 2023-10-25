@@ -1,0 +1,74 @@
+Verificar la disponibilidad del correo electrónico durante el registro:
+
+Al registrar un nuevo usuario, verifica si el correo electrónico ya existe en la base de datos antes de realizar la inserción.
+Si el correo ya existe, muestra un mensaje de error al usuario, indicando que la dirección de correo electrónico ya está en uso.
+Aplicar restricciones únicas en la base de datos:
+
+En tu base de datos, puedes aplicar una restricción única en la columna de correo electrónico para evitar que se dupliquen valores. Esto garantizará que no se puedan insertar registros con el mismo correo electrónico.
+La sintaxis para aplicar una restricción única varía según el sistema de gestión de bases de datos (por ejemplo, en MySQL, puedes usar UNIQUE).
+Manejar excepciones:
+
+En tu código de servidor (backend), maneja las excepciones que puedan surgir debido a intentos de inserción de registros duplicados.
+1Muestra mensajes de error personalizados o responde con un código de estado HTTP que indique un conflicto, como el código 409 Conflict.
+Controlar la autenticación:
+
+2Una vez que el usuario se registra y su información se almacena en la base de datos, debes implementar un sistema de autenticación que permita a los usuarios registrados iniciar sesión en la aplicación.
+Puedes utilizar bibliotecas y marcos de autenticación, como Passport.js en Node.js, para gestionar la autenticación de usuarios.
+Verificar la disponibilidad del correo electrónico durante el registro:
+
+Al registrar un nuevo usuario, verifica si el correo electrónico ya existe en la base de datos antes de realizar la inserción.
+Si el correo ya existe, muestra un mensaje de error al usuario, indicando que la dirección de correo electrónico ya está en uso.
+Aplicar restricciones únicas en la base de datos:
+
+En tu base de datos, puedes aplicar una restricción única en la columna de correo electrónico para evitar que se dupliquen valores. Esto garantizará que no se puedan insertar registros con el mismo correo electrónico.
+La sintaxis para aplicar una restricción única varía según el sistema de gestión de bases de datos (por ejemplo, en MySQL, puedes usar UNIQUE).
+Manejar excepciones:
+
+En tu código de servidor (backend), maneja las excepciones que puedan surgir debido a intentos de inserción de registros duplicados.
+Muestra mensajes de error personalizados o responde con un código de estado HTTP que indique un conflicto, como el código 409 Conflict.
+Controlar la autenticación:
+
+Una vez que el usuario se registra y su información se almacena en la base de datos, debes implementar un sistema de autenticación que permita a los usuarios registrados iniciar sesión en la aplicación.
+Puedes utilizar bibliotecas y marcos de autenticación, como Passport.js en Node.js, para gestionar la autenticación de usuarios.
+Gestionar sesiones y cookies:
+
+Para mantener el estado de autenticación, usa sesiones y cookies. Esto permite que un usuario registrado permanezca autenticado en la aplicación incluso después de cerrar y volver a abrir su navegador.
+Implementar medidas de seguridad:
+
+Asegúrate de aplicar medidas de seguridad, como almacenar contraseñas de manera segura (mediante el uso de algoritmos de hash y salting) y proteger contra ataques comunes, como la inyección de SQL y la validación de datos.
+
+
+i dont like the way u created it
+
+
+unhandled exception current profile has no wmi enabled check the log for more details
+
+
+Desarrollo De Paginas Web Funcionales y Estaticas Para Su Negocio
+
+Incluye Hosting, Funcionalidades Basicas y DIseño
+
+Entrega EN Menos De 1 Mes
+
+400.000 -- 1.200.000
+
+seccion de registo
+seccion de pago
+
+
+ CÓMO INVERTIR
+
+  ⚪¿CÓMO LO HAGO?
+
+  ⚪¿CÓMO PUEDO EMPEZAR?
+
+  ⚪ CÓMO FUNCIONA
+
+  ⚪ NO LO SE Y QUIERO QUE ME DAN INFORMACION Y GUIA
+
+  ⚪ QUIERO INVERTIR
+
+skip system tables upgrade check and process
+
+
+

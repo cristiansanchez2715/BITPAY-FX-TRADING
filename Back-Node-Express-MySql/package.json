@@ -1,0 +1,29 @@
+{
+  "name": "bitpay",
+  "version": "1.0.0",
+  "description": "this is the api of opperating for the bitpay fx trading for the login and the buys",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristiansanchez2715/BITPAY-FX-TRADING.git"
+  },
+  "keywords": [
+    "node",
+    "React",
+    "bitpay"
+  ],
+  "author": "Cristian Medina -- Thera-Web",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristiansanchez2715/BITPAY-FX-TRADING/issues"
+  },
+  "homepage": "https://github.com/cristiansanchez2715/BITPAY-FX-TRADING#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "4.18.2",
+    "mysql2": "^3.6.2"
+  }
+}

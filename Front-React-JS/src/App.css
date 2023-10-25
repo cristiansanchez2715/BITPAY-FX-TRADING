@@ -1,0 +1,329 @@
+/* CENTRAL CONTAINER SECTIONS */
+.container-central-all-home-section{
+  margin-top: -100px;
+}
+
+
+/* HOME INFORMATION */
+
+@media(min-width: 1280px){
+.contenedor-information-product{
+
+  width: 700px;
+  height: 400px;
+  margin-left: 100px;
+}
+
+h1{
+  color: orange;
+  background-color: black;
+  border-radius: 10px;
+  width: auto;
+  padding: 1px;
+  justify-content: center;
+text-align: center;
+}
+
+/* HOME */
+
+.animation-hola{
+  background-image: url(../src/assets/hola.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 100px;
+  animation: holanimate 4000ms linear infinite;
+  margin-left: 75px;
+  z-index: 1;
+}
+
+@keyframes holanimate {
+  0%{
+  transform: translateX(75px);
+  }
+  100%{ transform: translateX( 625px)}
+}
+
+
+
+.animation2{
+  width: 400px;
+  height: 300px;
+  margin-left: calc(50% - 200px);
+  animation: animate2 15000ms linear infinite;
+  transition: transform 5s ease;
+  border-radius: 20px;
+}
+
+@keyframes animate2{
+0%{
+background-image: url(./assets/imagn1.jpg);
+background-size: 100% 100%;
+background-repeat: no-repeat;
+
+}
+33.33%{
+  background-image: url(./assets/imagen2.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+}
+66.66%{
+  background-image: url(./assets/imagen3.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+}
+100%{
+  background-image: url(./assets/imagn1.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+}
+
+}
+
+.container-navigate-for-home.active{
+  top: 0%;
+  left: 0%;
+  position: fixed;
+}
+
+.container-navigate-for-home{
+position: fixed;
+top: 330px;
+left: 0;
+transition: top 0.3s, left 0.3s;
+z-index: 10;
+}
+
+
+.navigate-for-home{
+width: 100vw;
+text-align: center;
+align-items: center;
+height: 50px;
+background-color: #111;
+z-index: 10;
+}
+.options-navigate-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.item-navigate{
+ margin-left: 50px; 
+ color: white;
+ margin-top: 10px;
+}
+.item-navigate:hover{
+  color: rgba(17, 0, 255, 0.35);
+  cursor: pointer;
+}
+
+/* sign in */
+.footer-login-container{
+  width: 300px;
+  
+  justify-content: center;
+}
+
+
+
+.btn-log{
+  margin-top: 10px;
+  color: orange;
+  background-color: black;
+  border-radius: 10px;
+  width: 80px;
+  padding: 1px;
+  justify-content: center;
+  margin-left: 120px;
+}
+
+.footer-login{
+  margin-left: 110px;
+}
+
+.sign-in-container{
+  height: 320px;
+  width: 300px;
+  background-color: rgb(239, 235, 230);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 2px black;
+  position: fixed;
+  left: 75%;
+ top: 380px;
+}
+.img-bitpay{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 100px;
+}
+
+.parrafo-signin{
+  margin-top: 100px;
+}
+
+.input-containers{
+  display: flex;
+  flex-direction: column;
+}
+
+.input{
+  margin-top: 20px;
+  width: 200px;
+  margin-left: calc(50%  - 100px);
+}
+
+
+/* sign up */
+
+.signup-form {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px #888;
+  height: 540px;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.signup-label {
+  display: block;
+  margin-top: 10px;
+}
+
+.signup-input-container {
+  margin-bottom: 15px;
+}
+
+.signup-input {
+  width: 250px;
+
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signup-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* Barra de Navegacion */
+.barnav-container{
+  background-image: url(./assets/BITPAY.jpg);
+ background-size: 100vw 50vh;
+background-repeat: no-repeat;
+ width: 100vw;
+ height: 500px; 
+}
+
+.barnav{
+width: 100vw;
+height: 300px;
+background-color: rgba(17, 0, 255, 0.35);
+}
+.items-barnav-container{
+  display: flex;
+  flex-direction: row;
+  margin-left: 00px;
+}
+.items-barnav{
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  color: orange;
+  background-color: black;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
+  padding: 1px;
+  justify-content: center;
+}
+.items-barnav:hover{
+color: white;
+cursor: pointer;
+}
+
+/* Buys Card */
+
+.container-card-buys {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; 
+}
+
+.card-buys {
+  border: 1px solid #ddd; 
+  padding: 20px; 
+  width: 250px;
+  height: 200px; 
+  color: orange;
+  background-color: black;
+  border-radius: 10px;
+
+}
+
+
+/* user-profile */
+
+
+.card-profile {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  width: 500px; /* Ajusta el ancho según tus necesidades */
+  text-align: left; /* Alinea el contenido del card a la izquierda */
+  margin-left: calc(50% - 250px);
+  margin-top: -100px;
+}
+
+.title-profile {
+  font-size: 24px;
+  margin: 0;
+}
+
+.user-profile {
+  font-size: 18px;
+  margin: 0;
+  color: #555; /* Color de texto más oscuro */
+}
+
+p {
+  margin: 10px 0;
+}
+
+
+.container-img{
+  border-radius: 50%;
+  border: solid black 1px;
+  width: 150px;
+  height: 150px;
+  margin-left: calc(50% - 75px);
+}
+
+.profile-img{
+  width: 100px;
+  height: 100px;
+  margin-left: calc(50% - 50px);
+  margin-top: 60px;
+}
+
+}
