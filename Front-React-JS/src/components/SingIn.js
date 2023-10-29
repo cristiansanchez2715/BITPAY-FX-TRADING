@@ -1,6 +1,5 @@
 import React from 'react'
 import imgBitPay from '../assets/bitpay-simbol-removebg-preview.png'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function SingIn({dataUser, setDataUser, setUserSesion, setVisibilityNavBar, dataBD, inputUsuarioLogIn, inputContraseñaLogIn, setVisibilitySignIn, setInputUsuarioLogIn, setInputContraseñaLogIn}) {

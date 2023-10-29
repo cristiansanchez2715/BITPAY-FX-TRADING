@@ -1,7 +1,14 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
-function SingUp({ dataBD, setStatePrueba, setNewUsuario, newUsuario}) {
+
+function SingUp({setVisibilitySignIn, dataBD, setStatePrueba, setNewUsuario, newUsuario, userSesion}) {
+let [userUnique, setUserUnique] = useState(true)
+let [emailUnique, setEmailUnique] = useState(true)
   
+
+const navegar = useNavigate()
+
   const handleChange = (e) => {
     const { name, value } = e.target;
       setNewUsuario({
@@ -13,51 +20,60 @@ function SingUp({ dataBD, setStatePrueba, setNewUsuario, newUsuario}) {
   
   const handleSubmit = (e) => {
     if(newUsuario.password === newUsuario.passwordConfirm){
-    e.preventDefault();
-
-
-    // const dateParts = newUsuario.birthdate.split('--');
-      // const formattedDate = `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`;
-      // Actualiza la fecha en el objeto newUser
-      // newUsuario.birthdate = formattedDate;
-    // Aquí puedes agregar la lógica para manejar los datos del formulario
-    console.log(newUsuario);
+    if(userUnique && emailUnique){
+      e.preventDefault();
+console.log(newUsuario);
     setStatePrueba(true)
-  }
+    navegar("/") 
+    alert("usuario registrado con exito")
+    setVisibilitySignIn(true)
+  }}
     else{
       alert("password incorrect")
     }
   };
 
-// comprobaciones relacionadas con la base de datos
 
 const comprobacionUserUnico = () => {
-if(dataBD.includes(newUsuario.user))  {
- alert("este usuario ya esta registrado") 
+  if (!dataBD || dataBD.length === 0) {
+    return true; // No hay usuarios registrados, se puede continuar
+  }
+  
+  const userExist = dataBD.some((user) => user.user === newUsuario.user);
+  if (userExist) {
+    alert("Este nombre de usuario ya está registrado");
+    setUserUnique(false);
+    return false; // No es un usuario único, no se puede continuar
+  } else {
+    setUserUnique(true);
+    return true; // Es un usuario único, se puede continuar
+  }
+};
 
-}
-else{
-  return true
-}
-}
-
+// Comprobación de correo electrónico único
 const comprobacionCorreoUnico = () => {
-if(dataBD.includes(newUsuario.email)){
-  alert("este email ya esta registrado")
+  if (!dataBD || dataBD.length === 0) {
+    return true; // No hay usuarios registrados, se puede continuar
+  }
   
-}
-else{
-  
-  return true
-}
+  const emailExist = dataBD.some((em) => em.email === newUsuario.email);
+  if (emailExist) {
+    alert("Este correo electrónico ya está registrado");
+    setEmailUnique(false);
+    return false; // No es un correo electrónico único, no se puede continuar
+  } else {
+    setEmailUnique(true);
+    return true; // Es un correo electrónico único, se puede continuar
+  }
+};
 
-}
- 
+// Manejo del formulario
 const handleFormSubmit = (e) => {
   e.preventDefault();
-
-  if (comprobacionCorreoUnico() && comprobacionUserUnico()) {
+  
+  if (comprobacionUserUnico() && comprobacionCorreoUnico()) {
     handleSubmit(e);
+  
   }
 };
 
@@ -101,8 +117,10 @@ const handleFormSubmit = (e) => {
     <input
   type="date"
   name="birthdate"
-  onChange={handleChange}
-  value={newUsuario.birthdate}
+  onChange={(e) => {
+    setNewUsuario({...newUsuario, birthdate: e.target.value})
+  }}
+  value={newUsuario.birthdate || ""}
   className="signup-input"
 />
   </div>
@@ -161,3 +179,50 @@ export default SingUp
 //     alert("las contraseñas no coinciden")
 //   }
 // }
+// comprobaciones relacionadas con la base de datos
+
+// const comprobacionUserUnico = () => {
+//   if (dataBD && dataBD.length > 0) {
+//     const userExist = dataBD.some((user) => user.user === newUsuario.user);
+//     if (userExist) {
+//       alert("Este usuario ya está registrado");
+//       setUserUnique(false);
+//     } else {
+//       setUserUnique(true);
+//       return true;
+//     }
+//   } else {
+//     // Manejar el caso donde dataBD es undefined o vacío
+//     return false;
+//   }
+// };
+
+
+
+// const comprobacionCorreoUnico = () => {
+//   if (dataBD && dataBD.length > 0) {
+//     const emailExist = dataBD.some((em) => em.email === newUsuario.email);
+//     if (emailExist) {
+//       alert("Este email ya está registrado");
+//       setEmailUnique(false);
+//     } else {
+//       setEmailUnique(true);
+//     }
+//   } else {
+//     // Manejar el caso donde dataBD es undefined o vacío
+//     return false;
+//   }
+// };
+
+
+// const handleFormSubmit = (e) => {
+//   e.preventDefault();
+
+//   if (comprobacionUserUnico() === true) {
+//     if(comprobacionCorreoUnico() === true){
+
+//       handleSubmit(e);
+//     }
+   
+//   }
+// };

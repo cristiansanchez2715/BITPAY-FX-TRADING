@@ -27,20 +27,21 @@ let[visibilityNavBar, setVisibilityNavBar] = useState(false)
 let [userSesion, setUserSesion] = useState()
 let [dataUser, setDataUser] = useState()
 
-let[newUsuario, setNewUsuario] = useState({name: "", 
-
+let[newUsuario, setNewUsuario] = useState({
+  name: "", 
 user: "", 
-email: "",
- birthdate: "",
- gender: "",
+email: "", 
+birthdate: null, 
+gender: "",
  password: "",
- passwordConfirm: ""
+ passwordConfirm: "",
+ description: ""
 })
 
+const apiUrl = "http://localhost:4000/UsersRegisters"
 
 // logica conexion con el backend
-const sendDataToApi = () => {
-const apiUrl = "http://localhost:4000/UsersRegisters"
+let sendDataToApi = () => {
 
 axios.post(apiUrl, newUsuario)
 .then(response => console.log(response.data))
@@ -53,6 +54,9 @@ setStatePrueba(false)
 useEffect(() => {
   console.log(newUsuario)
 },[statePrueba])
+
+
+
 
 // logica traer datos de la base de datos
 const getDataToBD = () => {
@@ -71,12 +75,28 @@ console.log(dataBD)
 
 // USEEFFECTS
 
-
+useEffect(() => {
+  // Realiza acciones basadas en los datos en dataBD aquí
+  console.log(dataBD); // Aquí dataBD debería reflejar los datos actualizados
+}, [dataBD]);
 useEffect(sendDataToApi,[statePrueba])
 useEffect(getDataToBD, [])
 useEffect(() => {
   console.log(dataBD)
 }, [dataBD])
+
+useEffect(() => {
+  setNewUsuario({
+      name: '',
+      user: '',
+      email: '',
+      birthdate: null,
+      gender: '',
+      password: '',
+      passwordConfirm: '',
+    });}, [statePrueba])
+
+    useEffect(getDataToBD, [statePrueba])
 // useEffect(() => {
 //   console.log(dataUser)
 // }, [userSesion])
@@ -114,21 +134,11 @@ const closeSesion = () => {
 
   setVisibilitySignIn(true)
 }
+// logica carrito de compras
 
-// // Invierte $50 y obtén $550.
-//   Invierte $60 y obtén $660
-//   Invierte $70 y obtén $770
-//   Invierte $80 y obtén $880
-//   Invierte $90 y obtén $990
-//   Invierta $100 y obtenga $1100
-//   Invierte $200 y obtén $2200
-//   Invierte $300 y obtén 3300
-//   Invierta $400 y obtenga $4500
-//   Invierta $500 y obtenga $5500
-//   Invierta $600 y obtenga $6600
-//   Invierta $700 y obtenga $7700
-//   Invierta $800 y obtenga $8800
-//   Invierta $900 y obtenga $9900
+const [totalCompra, setTotalCompra] = useState({name: "", description: "", price: 0})
+
+
 
   return (
     <div className="App">
@@ -138,11 +148,11 @@ const closeSesion = () => {
 <Routes>
 
 <Route path="/" element={<Home />}></Route>
-<Route path="/SingUp" element={<SingUp dataBD={dataBD} setStatePrueba={setStatePrueba} newUsuario={newUsuario} setNewUsuario={setNewUsuario} />}></Route>
+<Route path="/SingUp" element={<SingUp  setVisibilitySignIn={setVisibilitySignIn} userSesion={userSesion} dataBD={dataBD} setStatePrueba={setStatePrueba} newUsuario={newUsuario} setNewUsuario={setNewUsuario} />}></Route>
 <Route path="/Buys"></Route>
 <Route path="/information"></Route>
-<Route path={`/User/${userSesion}`} element={<UserProfile dataUser={dataUser} />}></Route>
-<Route path='/Payments' element={<Payment products={products} />}></Route>
+<Route path={`/User/${userSesion}`} element={<UserProfile setDataUser={setDataUser} dataUser={dataUser} />}></Route>
+<Route path='/Payments' element={<Payment setTotalCompra={setTotalCompra} totalCompra={totalCompra} products={products} />}></Route>
 <Route path='/Payments/Transaccion/:item' element={<Transaccion />}></Route>
 </Routes>
 

@@ -327,3 +327,45 @@ p {
 }
 
 }
+
+
+/* Buy Car */
+
+.container-card-buy {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+/* Estilos para .card-buy */
+.card-buy {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  margin-bottom: 5px;
+}
+
+.card-buy h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.card-buy p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.card-buy p.description {
+  color: #666;
+}
+
+.container-card-buy{
+  position: absolute;
+  left: 90%;
+  top: 1000px;
+}
